@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manajemen Pengguna - SIMK</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+</head>
+<body class="bg-gray-100">
+    <div class="flex">
+        <!-- Sidebar -->
+        <div class="w-1/5 bg-white h-screen shadow-lg overflow-y-auto fixed">
+            <div class="p-4 flex items-center">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVv3QTiaTmSpA3FNRdXa-dIES4oGE6LwpxDQ&s.jpg" alt="University Logo" class="w-10 h-10 mr-2" width="50" height="50">
+                <div>
+                    <h1 class="text-blue-700 font-bold text-lg">UNIVERSITAS PAMULANG</h1>
+                </div>
+            </div>
+            <div class="p-4">
+                <div class="flex items-center mb-4">
+                    <img src="foto.jpg" alt="User Avatar" class="w-10 h-10 rounded-full mr-2" width="40" height="40">
+                    <div>
+                        <p class="font-semibold">Welcome, Arung Zidane Dwiaji</p>
+                        <p class="text-gray-500 text-sm">Administrator</p>
+                    </div>
+                </div>
+                    <div class="mb-4">
+                        <a href="index.html" class="flex items-center p-2 text-gray-700 hover:bg-gray-200 rounded-lg">
+                            <i class="fas fa-tachometer-alt mr-2"></i> Dashboard
+                        </a>
+                    </div>
+                    <div class="mb-4">
+                        <p class="text-gray-500 font-semibold">MENU KARYAWAN</p>
+                        <a href="karyawan.html" class="flex items-center p-2 text-gray-700 hover:bg-gray-200 rounded-lg">
+                            <i class="fas fa-users mr-2"></i> Karyawan
+                        </a>
+                        <a href="jabatan.html" class="flex items-center p-2 text-gray-700 hover:bg-gray-200 rounded-lg">
+                            <i class="fas fa-briefcase mr-2"></i> Jabatan
+                        </a>
+                        <a href="divisi.html" class="flex items-center p-2 text-gray-700 hover:bg-gray-200 rounded-lg">
+                            <i class="fas fa-building mr-2"></i> Divisi
+                        </a>
+                    </div>
+                    <div class="mb-4">
+                        <p class="text-gray-500 font-semibold">MENU ABSENSI</p>
+                        <a href="absensi.html" class="flex items-center p-2 text-gray-700 hover:bg-gray-200 rounded-lg"></a>
+                            <i class="fas fa-calendar-check mr-2"></i> Absensi
+                        </a>
+                        <a href="izin.html" class="flex items-center p-2 text-gray-700 hover:bg-gray-200 rounded-lg">
+                            <i class="fas fa-check-circle mr-2"></i> Izin
+                        </a>
+                        <a href="lembur.html" class="flex items-center p-2 text-gray-700 hover:bg-gray-200 rounded-lg">
+                            <i class="fas fa-clock mr-2"></i> Lembur
+                        </a>
+                    </div>
+                    <div class="mb-4">
+                        <p class="text-gray-500 font-semibold">MENU PENGGAJIAN</p>
+                        <a href="slip-gaji.html" class="flex items-center p-2 text-gray-700 hover:bg-gray-200 rounded-lg">
+                            <i class="fas fa-file-invoice-dollar mr-2"></i> Slip Gaji
+                        </a>
+                        <a href="cetak-slip-gaji.html" class="flex items-center p-2 text-gray-700 hover:bg-gray-200 rounded-lg">
+                            <i class="fas fa-print mr-2"></i> Cetak Slip Gaji
+                        </a>
+                    </div>
+                    <div class="mb-4">
+                        <p class="text-gray-500 font-semibold">MENU LAPORAN</p>
+                        <a href="cetak-laporan.html" class="flex items-center p-2 text-gray-700 hover:bg-gray-200 rounded-lg">
+                            <i class="fas fa-file-alt mr-2"></i> Cetak Laporan
+                        </a>
+                    </div>
+                    <div class="mb-4">
+                        <p class="text-gray-500 font-semibold">MENU ADMIN</p>
+                        <a href="pengguna.html" class="flex items-center p-2 bg-blue-600 text-white rounded-lg">
+                            <i class="fas fa-user-cog mr-2"></i> Pengguna
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="w-4/5 ml-[20%]">
+            <!-- Header -->
+            <div class="bg-blue-700 p-4 flex justify-between items-center">
+                <h1 class="text-white text-xl font-bold">Manajemen Pengguna</h1>
+                <div class="flex items-center">
+                    <img src="avatar.jpg" alt="User Avatar" class="w-10 h-10 rounded-full">
+                </div>
+            </div>
+
+            <div class="p-6">
+                <!-- Action Buttons -->
+                <div class="mb-6 flex justify-between items-center">
+                    <button class="bg-green-600 text-white px-4 py-2 rounded-lg flex items-center" onclick="openModal()">
+                        <i class="fas fa-plus mr-2"></i> Tambah Pengguna
+                    </button>
+                    <div class="flex gap-2">
+                        <button class="bg-green-600 text-white px-4 py-2 rounded-lg">
+                            <i class="fas fa-file-excel mr-2"></i> Export Excel
+                        </button>
+                        <button class="bg-red-600 text-white px-4 py-2 rounded-lg">
+                            <i class="fas fa-file-pdf mr-2"></i> Export PDF
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Search & Filter -->
+                <div class="bg-white rounded-lg shadow-md p-6 mb-6">
+                    <div class="grid grid-cols-4 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Cari Pengguna</label>
+                            <input type="text" placeholder="Nama atau Username" class="w-full p-2 border rounded-lg">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Role</label>
+                            <select class="w-full p-2 border rounded-lg">
+                                <option>Semua Role</option>
+                                <option>Administrator</option>
+                                <option>Manager</option>
+                                <option>Staff</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Status</label>
+                            <select class="w-full p-2 border rounded-lg">
+                                <option>Semua Status</option>
+                                <option>Aktif</option>
+                                <option>Nonaktif</option>
+                            </select>
+                        </div>
+                        <div class="flex items-end">
+                            <button class="bg-blue-600 text-white px-4 py-2 rounded-lg w-full">
+                                <i class="fas fa-search mr-2"></i> Cari
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Users Table -->
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <div class="overflow-x-auto">
+                        <table class="w-full">
+                            <thead>
+                                <tr class="bg-gray-100">
+                                    <th class="px-4 py-2 text-left">No</th>
+                                    <th class="px-4 py-2 text-left">Username</th>
+                                    <th class="px-4 py-2 text-left">Nama Lengkap</th>
+                                    <th class="px-4 py-2 text-left">Email</th>
+                                    <th class="px-4 py-2 text-left">Role</th>
+                                    <th class="px-4 py-2 text-left">Status</th>
+                                    <th class="px-4 py-2 text-left">Last Login</th>
+                                    <th class="px-4 py-2 text-left">Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-b">
+                                    <td class="px-4 py-2">1</td>
+                                    <td class="px-4 py-2">admin</td>
+                                    <td class="px-4 py-2">Administrator</td>
+                                    <td class="px-4 py-2">admin@example.com</td>
+                                    <td class="px-4 py-2">
+                                        <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-sm">Administrator</span>
+                                    </td>
+                                    <td class="px-4 py-2">
+                                        <span class="bg-green-100 text-green-800 px-2 py-1 rounded-full text-sm">Aktif</span>
+                                    </td>
+                                    <td class="px-4 py-2">2024-01-20 10:30:15</td>
+                                    <td class="px-4 py-2">
+                                        <div class="flex gap-2">
+                                            <button class="text-blue-600 hover:text-blue-800" onclick="openModal('edit')">
+                                                <i class="fas fa-edit"></i>
+                                            </button>
+                                            <button class="text-red-600 hover:text-red-800">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                            <button class="text-green-600 hover:text-green-800">
+                                                <i class="fas fa-key"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <!-- Tambahkan baris data pengguna lainnya di sini -->
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Pagination -->
+                    <div class="flex justify-between items-center mt-4">
+                        <div class="text-gray-600">
+                            Menampilkan 1 - 10 dari 50 data
+                        </div>
+                        <div class="flex gap-2">
+                            <button class="px-3 py-1 border rounded-lg hover:bg-gray-100">Previous</button>
+                            <button class="px-3 py-1 border rounded-lg bg-blue-600 text-white">1</button>
+                            <button class="px-3 py-1 border rounded-lg hover:bg-gray-100">2</button>
+                            <button class="px-3 py-1 border rounded-lg hover:bg-gray-100">3</button>
+                            <button class="px-3 py-1 border rounded-lg hover:bg-gray-100">Next</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Tambah/Edit Pengguna -->
+    <div id="userModal" class="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full hidden">
+        <div class="relative top-20 mx-auto p-5 border w-96 shadow-lg rounded-md bg-white">
+            <div class="mt-3 text-center">
+                <h3 class="text-lg leading-6 font-medium text-gray-900" id="modalTitle">Tambah Pengguna</h3>
+                <div class="mt-2 px-7 py-3">
+                    <form id="userForm">
+                        <div class="mb-4">
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
+                                Username
+                            </label>
+                            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Username">
+                        </div>
+                        <div class="mb-4">
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="fullName">
+                                Nama Lengkap
+                            </label>
+                            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="fullName" type="text" placeholder="Nama Lengkap">
+                        </div>
+                        <div class="mb-4">
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="email">
+                                Email
+                            </label>
+                            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="email" type="email" placeholder="Email">
+                        </div>
+                        <div class="mb-4">
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="role">
+                                Role
+                            </label>
+                            <select class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="role">
+                                <option>Administrator</option>
+                                <option>Manager</option>
+                                <option>Staff</option>
+                            </select>
+                        </div>
+                        <div class="mb-4">
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="status">
+                                Status
+                            </label>
+                            <select class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="status">
+                                <option>Aktif</option>
+                                <option>Nonaktif</option>
+                            </select>
+                        </div>
+                        <div class="mb-4">
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="password">
+                                Password
+                            </label>
+                            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password" placeholder="Password">
+                        </div>
+                    </form>
+                </div>
+                <div class="items-center px-4 py-3">
+                    <button id="saveButton" class="px-4 py-2 bg-blue-500 text-white text-base font-medium rounded-md w-full shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-300">
+                        Simpan
+                    </button>
+                </div>
+                <div class="items-center px-4 py-3">
+                    <button id="closeModal" class="px-4 py-2 bg-gray-500 text-white text-base font-medium rounded-md w-full shadow-sm hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-300">
+                        Tutup
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openModal(mode = 'add') {
+            const modal = document.getElementById('userModal');
+            const modalTitle = document.getElementById('modalTitle');
+            const form = document.getElementById('userForm');
+
+            modal.classList.remove('hidden');
+
+            if (mode === 'edit') {
+                modalTitle.textContent = 'Edit Pengguna';
+                // Di sini Anda bisa mengisi form dengan data pengguna yang akan diedit
+            } else {
+                modalTitle.textContent = 'Tambah Pengguna';
+                form.reset();
+            }
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('userModal');
+            modal.classList.add('hidden');
+        }
+
+        document.getElementById('closeModal').addEventListener('click', closeModal);
+
+        document.getElementById('saveButton').addEventListener('click', function() {
+            // Di sini Anda bisa menambahkan logika untuk menyimpan data pengguna
+            alert('Data pengguna disimpan!');
+            closeModal();
+        });
+    </script>
+</body>
+</html>
